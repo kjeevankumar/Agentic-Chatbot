@@ -69,4 +69,4 @@ class GraphBuilder:
             return self.chatbot_with_tools_build_graph()
         if usecase == "AI News":
             return self.ai_news_build_graph()
-        raise ValueError(f"Unknown use case: {usecase}")6
+        raise ValueError(f"Unknown use case: {usecase}")

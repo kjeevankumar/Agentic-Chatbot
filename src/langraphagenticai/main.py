@@ -1,4 +1,5 @@
 import streamlit as st
+from groq import AuthenticationError
 from langchain_core.messages import HumanMessage
 
 from .configuration import get_tavily_api_key
@@ -109,6 +110,12 @@ def load_langraphagenticai_ui():
                     ),
                 }
             )
+        except AuthenticationError:
+            st.error(
+                "❌ Groq rejected the API key. Replace it with a valid Groq API key "
+                "in the sidebar, then click **Save Groq key**."
+            )
+            return
         except (RuntimeError, TypeError, ValueError) as error:
             st.error(f"❌ AI News generation failed: {error}")
             return
@@ -144,6 +151,12 @@ def load_langraphagenticai_ui():
                 prompt,
                 st.session_state.chat_messages,
             )
+        except AuthenticationError:
+            st.error(
+                "❌ Groq rejected the API key. Replace it with a valid Groq API key "
+                "in the sidebar, then click **Save Groq key**."
+            )
+            return
         except (RuntimeError, TypeError, ValueError) as error:
             st.error(f"❌ Chat graph failed: {error}")
             return

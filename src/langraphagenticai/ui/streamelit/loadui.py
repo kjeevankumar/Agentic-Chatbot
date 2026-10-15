@@ -168,8 +168,6 @@ class LoadStreamlitUI:
                     "Tavily API key",
                     type="password",
                     key="tavily_api_key_input",
-                    help="Required for web search tools.",
-                    placeholder="Enter your Tavily API key",
                     value=st.session_state.get(
                         "submitted_tavily_api_key", get_tavily_api_key()
                     ),
