@@ -37,7 +37,7 @@ generates a concise digest with key points and source information.
 ### 1. Install dependencies
 
 ```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirement.txt
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
 ### 2. Configure API keys
@@ -71,7 +71,7 @@ Open [http://localhost:8501](http://localhost:8501).
 ```text
 .
 ├── app.py
-├── requirement.txt
+├── requirements.txt
 ├── .env.example
 └── src/langraphagenticai/
     ├── graph/       # LangGraph workflow construction and routing
